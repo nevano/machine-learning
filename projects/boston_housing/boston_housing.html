@@ -13816,7 +13816,7 @@ We can see this in the graph where both scores are increasing until a max_depth 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> K-fold cross validation is a technique to maximize the data we have available by breaking the data set into a number of bins (k), and then using one of those as testing data and the rest as training data. Because k-fold gives you several different groups of data, it is very helpful for model selection (grid search) since you can run the different parameter tunes against all of the different bins and more effectively compare them.</p>
+<p><strong>Answer: </strong> K-fold cross validation is a technique to maximize the data we have available by breaking the data set into a number of bins (k), and then using one of those as testing data and the rest as training data. The process is repeated for each bin, so that each one gets a chance at being the test set. At the end, we take the error rate from each run and find the average.  This becomes the cross validation error. K-fold is very useful for model selection (grid search) since you can run the different parameter tunes against all of the different bins with each data point getting to be in the test set at one point. If we do model validation with only one data split, we may pick a parameter tune which works well for that training data, but not for the rest of the data.  K-fold ensures we run against all of the data and test against each data point.</p>
 
 </div>
 </div>
@@ -14044,9 +14044,10 @@ Predicted selling price for Client 3&#39;s home: $933,975.00
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-Predicted selling price for Client 1's home: $424,935.00
-Predicted selling price for Client 2's home: $284,200.00
-Predicted selling price for Client 3's home: $933,975.00</p>
+Predicted selling price for Client 1's home: $424,935.00 
+Predicted selling price for Client 2's home: $284,200.00 
+Predicted selling price for Client 3's home: $933,975.00. 
+I would recommend each client sell their home at a rate slightly higher than described by the predictions. These prices seem reasonable based on the Data Exploration section since the average house rate is 454,342.94 and client 1's house seems to fall into the profile of "average". Client 3's home is predicted to be close to the max price, but it also has some of the "most expensive" features--many bedrooms, very low poverty level, and low student-teacher ration.  Client 2 is on the lower side, but looking at the features and eyeballing the dataset, the price estimate looks right on.  The only reason I recommend that they sell higher is to get them to make as much money as possible on the sale.</p>
 
 </div>
 </div>
